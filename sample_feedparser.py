@@ -1,4 +1,12 @@
 import feedparser
-d = feedparser.parse("https://pythonhosted.org/feedparser/")
+import pprint
 
-print(d.feed)
+fo = open('xml10.py','w')
+
+d = feedparser.parse("http://timesofindia.indiatimes.com/rssfeedstopstories.cms")
+
+print(d['encoding'])
+# pp=pprint.pformat(d,indent=4)
+# qq=pprint.pformat(dict,indent=4)
+
+# fo.write(pp)
