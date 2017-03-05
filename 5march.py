@@ -27,6 +27,10 @@ fe.write(qq)
 #storing the output of recovered value into a list:
 list = d['entries']
 
+# Extrating the first value of list, which is a dictionary,
+# and storing it here:
+dict_of_list = list[0]
+
 #printing the list recovered from entries:
 # print(list)
 
@@ -37,4 +41,10 @@ rr=pprint.pformat(list,indent=4)
 fl.write(rr)
 
 #printing the formated list
-print(rr)
+# print(rr)
+
+#formatting dict_of_list:
+dl = pprint.pformat(dict_of_list['links'],indent=4)
+
+#printing the formatted links value inside dict_of_list:\
+print(dl)
