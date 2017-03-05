@@ -29,22 +29,49 @@ list = d['entries']
 
 # Extrating the first value of list, which is a dictionary,
 # and storing it here:
-dict_of_list = list[0]
 
-#printing the list recovered from entries:
-# print(list)
+# dict_of_list = list[1]
 
-#formatting the list generated:
-rr=pprint.pformat(list,indent=4)
+# #printing the list recovered from entries:
+# # print(list)
 
-#storing the formatted list into file:
-fl.write(rr)
+# #formatting the list generated:
+# rr=pprint.pformat(list,indent=4)
 
-#printing the formated list
-# print(rr)
+# #storing the formatted list into file:
+# fl.write(rr)
 
-#formatting dict_of_list:
-dl = pprint.pformat(dict_of_list['links'],indent=4)
+# #printing the formated list
+# # print(rr)
 
-#printing the formatted links value inside dict_of_list:\
-print(dl)
+# #formatting dict_of_list:
+# dl = pprint.pformat(dict_of_list['links'],indent=4)
+
+# #printing the formatted links value inside dict_of_list:\
+# print(dl)
+i=0
+#loop for taking out all the links
+while(i>=0):
+	dict_of_list = list[i]
+
+	#printing the list recovered from entries:
+	# print(list)
+
+	#formatting the list generated:
+	rr=pprint.pformat(list,indent=4)
+
+	#storing the formatted list into file:
+	fl.write(rr)
+
+	#printing the formated list
+	# print(rr)
+
+	#formatting dict_of_list:
+	dl = pprint.pformat(dict_of_list['links'],indent=4)
+
+	#printing the formatted links value inside dict_of_list:
+	print("Article No")
+	print(i)
+	print(dl)
+	i=i+1
+	pass
