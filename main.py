@@ -2,10 +2,10 @@ import feedparser
 import pprint 
 
 #creating a file for storage
-fp=open("parsedfeed.py","w")
-fe=open("formattedentries.py","w")
-fl=open("formattedlist.py","w")
-fo=open("formattedsummary.py","w")
+fp=open("fileOutput/parsedfeed.py","w")
+fe=open("fileOutput/formattedentries.py","w")
+fl=open("fileOutput/formattedlist.py","w")
+fo=open("fileOutput/formattedsummary.py","w")
 
 
 d=feedparser.parse("https://news.google.com/?output=rss")
