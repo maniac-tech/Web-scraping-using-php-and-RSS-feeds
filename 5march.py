@@ -5,10 +5,11 @@ import pprint
 fp=open("parsedfeed.py","w")
 fe=open("formattedentries.py","w")
 fl=open("formattedlist.py","w")
+fo=open("formattedsummary.py","w")
 
 
 d=feedparser.parse("http://timesofindia.indiatimes.com/rssfeedstopstories.cms")
-
+print(d)
 #prettu print
 pp=pprint.pformat(d,indent=4)
 
@@ -68,10 +69,11 @@ while(i>=0):
 
 	#formatting dict_of_list:
 	dl = pprint.pformat(dict_of_list['links'],indent=4)
-
+	sl = pprint.pformat(dict_of_list['summary'],indent=4)
 	#printing the formatted links value inside dict_of_list:
-	print("Article No")
-	print(i)
+	print("Article No {}".format(i))
+	# print(i)
 	print(dl)
+	print(sl)
 	i=i+1
 	pass
