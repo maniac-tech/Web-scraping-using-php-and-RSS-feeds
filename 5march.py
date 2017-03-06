@@ -3,13 +3,13 @@ import pprint
 
 #creating a file for storage
 fp=open("parsedfeed.py","w")
-fe=open("fileOutput/formattedentries.py","w")
-fl=open("fileOutput/formattedlist.py","w")
-fo=open("fileOutput/formattedsummary.py","w")
+fe=open("formattedentries.py","w")
+fl=open("formattedlist.py","w")
+fo=open("formattedsummary.py","w")
 
 
-d=feedparser.parse("https://news.google.com/?output=rss")
-# print(d)
+d=feedparser.parse("http://timesofindia.indiatimes.com/rssfeedstopstories.cms")
+print(d)
 #prettu print
 pp=pprint.pformat(d,indent=4)
 
@@ -50,11 +50,12 @@ list = d['entries']
 
 # #printing the formatted links value inside dict_of_list:\
 # print(dl)
-i=0
+i=len(list)
 #loop for taking out all the links
-m=len(list)
-while(i<m):
-	dict_of_list = list[i]
+print(i)
+m=0
+while(m>=0 && m<i):
+	dict_of_list = list[m]
 
 	#printing the list recovered from entries:
 	# print(list)
@@ -72,9 +73,9 @@ while(i<m):
 	dl = pprint.pformat(dict_of_list['links'],indent=4)
 	sl = pprint.pformat(dict_of_list['summary'],indent=4)
 	#printing the formatted links value inside dict_of_list:
-	print("Article No {}".format(i))
+	print("Article No {}".format(m))
 	# print(i)
 	print(dl)
 	print(sl)
-	i=i+1
+	m=m+1
 	pass
