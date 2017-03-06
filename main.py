@@ -8,8 +8,8 @@ fl=open("formattedlist.py","w")
 fo=open("formattedsummary.py","w")
 
 
-d=feedparser.parse("http://timesofindia.indiatimes.com/rssfeedstopstories.cms")
-print(d)
+d=feedparser.parse("https://news.google.com/?output=rss")
+# print(d)
 #prettu print
 pp=pprint.pformat(d,indent=4)
 
