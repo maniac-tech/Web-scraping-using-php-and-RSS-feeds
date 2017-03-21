@@ -8,7 +8,7 @@ dlm = []
 slm = []
 
 fp=open("parsedfeed.py","w")
-d=feedparser.parse("http://timesofindia.indiatimes.com/rssfeedstopstories.cms")
+d=feedparser.parse("https://news.google.com/?output=rss")
 # print(d)
 #prettu print
 pp=pprint.pformat(d,indent=4)
