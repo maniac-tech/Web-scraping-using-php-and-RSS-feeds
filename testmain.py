@@ -1,12 +1,17 @@
 #importing flask
 from flask import Flask, render_template
 from flask import redirect
-
+#importing feedparser for parsing rss feed
 import feedparser
 import pprint 
+#importing regex module
+import re
+
+#initializing empty lists 
 dlm = [] 
 slm = []
 tlm = []
+mlm = []
 
 fp=open("parsedfeed.py","w")
 d=feedparser.parse("https://news.google.com/?output=rss")
@@ -20,7 +25,11 @@ fp.write(pp)
 list = d['entries']
 i=0
 #loop for taking out all the links
+pattern = "(?<=src=\").*?(?=\")"
+regex = re.compile(pattern)
+
 m=len(list)
+# matrix = [[0 for x in xrange(2)] for x in xrange(m)]
 while(i<m):
 	dict_of_list = list[i]
 
@@ -41,8 +50,13 @@ while(i<m):
 	dlm.append(dl)
 	sl = pprint.pformat(dict_of_list['summary'],indent=4)
 	slm.append(sl)
+	match = regex.search(sl)
+	mlm.append(match.group(0))
+	# matrix[i][1] = match.group(0)
 	tl = pprint.pformat(dict_of_list['title'],indent=4)
 	tlm.append(tl)
+	# matrix[i][0] = tl
+	#for extracting the 
 	#printing the formatted links value inside dict_of_list:
 	print("Article No {}".format(i))
 	# print(i)
@@ -62,7 +76,7 @@ app = Flask(__name__)
 
 def index():
 	
-	return render_template('hmain.html', TLM = tlm)
+	return render_template('hmain.html', TLM = tlm, MLM = mlm)
 
 #http://localhost:5000/yourname
 # @app.route('/<name>')
