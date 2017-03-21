@@ -6,6 +6,7 @@ import feedparser
 import pprint 
 dlm = [] 
 slm = []
+tlm = []
 
 fp=open("parsedfeed.py","w")
 d=feedparser.parse("https://news.google.com/?output=rss")
@@ -40,6 +41,8 @@ while(i<m):
 	dlm.append(dl)
 	sl = pprint.pformat(dict_of_list['summary'],indent=4)
 	slm.append(sl)
+	tl = pprint.pformat(dict_of_list['title'],indent=4)
+	tlm.append(tl)
 	#printing the formatted links value inside dict_of_list:
 	print("Article No {}".format(i))
 	# print(i)
@@ -59,7 +62,7 @@ app = Flask(__name__)
 
 def index():
 	
-	return render_template('hmain.html', SLM = slm)
+	return render_template('hmain.html', TLM = tlm)
 
 #http://localhost:5000/yourname
 # @app.route('/<name>')
