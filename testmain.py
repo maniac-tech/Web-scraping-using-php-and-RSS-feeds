@@ -26,6 +26,7 @@ list = d['entries']
 i=0
 #loop for taking out all the links
 pattern = "(?<=src=\").*?(?=\")"
+pattern1 = "(?<=&url=\").*?(?=\")"
 regex = re.compile(pattern)
 
 m=len(list)
