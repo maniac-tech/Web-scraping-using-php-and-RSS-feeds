@@ -9,9 +9,11 @@
 		https://github.com/innovater21/basicFlaskApp
 	2.feedparser
 
+## Installations
+	1. install feedparser:
+		windows: pip install feedparser
+	2.install flask:
+		windows: pip install flask
 ## Run
 
 	python testmain.py
-
-
-
