@@ -73,10 +73,7 @@ app = Flask(__name__)
 @app.route('/')
 
 #default method to show
-
-
 def index():
-	
 	return render_template('hmain.html', TLM = tlm, MLM = mlm)
 
 #http://localhost:5000/yourname
@@ -90,6 +87,9 @@ def user(name):
 	return redirect('http://www.google.com')
 
 
+@app.route('/login')
+def login():
+	return render_template('login.html')
 
 
 if __name__ == '__main__':
