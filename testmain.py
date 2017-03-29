@@ -86,7 +86,7 @@ def index():
 def user(name):
 	return redirect('http://www.google.com')
 
-
+#route to login page
 @app.route('/login')
 def login():
 	return render_template('login.html')
