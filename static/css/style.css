@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #c1bdba;
+  background: white;
   font-family: 'Titillium Web', sans-serif;
 }
 
@@ -22,7 +22,7 @@ a:hover {
 }
 
 .form {
-  background: rgba(19, 35, 47, 0.9);
+  background: rgb(120,144,156);
   padding: 40px;
   max-width: 600px;
   margin: 40px auto;
@@ -55,11 +55,11 @@ a:hover {
   transition: .5s ease;
 }
 .tab-group li a:hover {
-  background: #179b77;
+  background: rgb(0,188,212);
   color: #ffffff;
 }
 .tab-group .active a {
-  background: #1ab188;
+  background: rgb(0,188,212);
   color: #ffffff;
 }
 
@@ -157,14 +157,14 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: rgb(0,188,212);
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #179b77;
+  background: rgb(0,151,167);
 }
 
 .button-block {
